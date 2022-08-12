@@ -1,8 +1,14 @@
-var alpha = "abcdefghijklmnopqrstuvwxyz";
-var upperAlpha = alpha.toUpperCase();
-var lowerAlpha = alpha.toLowerCase();
+// Alphanumeric variable assignments
+var alpha = "abcdefghijklmnopqrstuvwxyz".split("");
+var upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var numAlpha = "0123456789".split("")
 
-console.log(lowerAlpha);
+
+console.log(alpha);
+console.log(upperAlpha);
+console.log(numAlpha);
+
+
 
 
 // Make sure to Assign all variables
