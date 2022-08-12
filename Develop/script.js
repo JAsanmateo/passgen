@@ -2,11 +2,13 @@
 var alpha = "abcdefghijklmnopqrstuvwxyz".split("");
 var upperAlpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var numAlpha = "0123456789".split("")
+var specialAlpha = ["!", "#", "$", "%", "&", "*", "-", ";", "=", "^", "~", "$"];
 
 
 console.log(alpha);
 console.log(upperAlpha);
 console.log(numAlpha);
+console.log(specialAlpha);
 
 
 
