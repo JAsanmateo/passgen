@@ -1,3 +1,9 @@
+var alpha = "abcdefghijklmnopqrstuvwxyz";
+var upperAlpha = alpha.toUpperCase();
+var lowerAlpha = alpha.toLowerCase();
+
+console.log(lowerAlpha);
+
 
 // Make sure to Assign all variables
 // -lowercase
