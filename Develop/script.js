@@ -17,8 +17,6 @@ var passMin = passRange[0];
 var passMax = passRange[117];
 
 
-console.log(passMax);
-
 // Assignment Code Variable that selects button div
 var generateBtn = document.querySelector("#generate");
 
@@ -44,15 +42,22 @@ function generatePassword() {
     alert(errorTrigger);
   }
   // This ends the Starting Prompt
+  
   // This begins the starting point of password length
   if (lengthStart < passMin) {
     alert(errorTrigger);
   } else if (lengthStart > passMax) {
     alert(errorTrigger);
   } else {
-    var charConfirm = prompt(charTrigger); 
+    var password = [];
+    for (var i = 0; i < lengthStart; i++) {
+      password.push(i);
+    }
+    // var charConfirm = prompt(charTrigger); 
   }
+  alert(password);
 } 
+
 
 
 
