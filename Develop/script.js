@@ -76,6 +76,8 @@ function generatePassword() {
     }}
     // This ends the Password Length segment. Correct Array Length stored in passLength
   
+    console.log(passLength);
+
 // This begins the segment to choose characters
 var charStart = confirm(charTrigger); 
   if (charStart === true) {
@@ -87,31 +89,32 @@ var charStart = confirm(charTrigger);
     if (upperConfirm === true) {
       var upperAdd = passLength.concat(upperAlpha);
       console.log(upperAdd);
-      // Replace with code that includes uppercase letters
       var lowerConfirm = confirm(lowerTrigger); 
     } else {
       var lowerConfirm = confirm(lowerTrigger);}
     
-      console.log(passLength);
+
     if (lowerConfirm === true) {
-      // Replace with code to include lowercase letters
-      alert(passLength);
+      var lowerAdd = passLength.concat(alpha);
+      console.log(lowerAdd);
+      var numConfirm = confirm(numTrigger);
     } else {
       var numConfirm = confirm(numTrigger);}
 
-//       if (numConfirm === true) {
-//         // Replace with code to include numbers
-//         alert(passLength);
-//       } else {
-//         var specConfirm = confirm(specTrigger);
-//       }
+      if (numConfirm === true) {
+        var numAdd = passLength.concat(passRange);
+        console.log(numAdd);
+      } else {
+        var specConfirm = confirm(specTrigger);
+      }
 
-//       if (specConfirm === true) {
-//         // Replace with code to include special characters
-//         alert(passLength);
-//       } else {
-//         var finConfirm = confirm(finTrigger);
-//       }
+      if (specConfirm === true) {
+        var specAdd = passLength.concat(specialAlpha);
+        console.log(specAdd);
+        var finConfirm = confirm(finTrigger);
+      } else {
+        var finConfirm = confirm(finTrigger);
+      }
 
 //       if (finConfirm === true) {
 //         // Replace to display final password
