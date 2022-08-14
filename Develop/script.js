@@ -21,6 +21,22 @@ for (var i = 8; i < 126; i++) {
 var passMin = passRange[0];
 var passMax = passRange[117];
 
+// // Successfully combined two arrays
+// console.log(alpha);
+// console.log(upperAlpha);
+
+// var newArray = alpha.concat(upperAlpha);
+// console.log(newArray);
+
+// Working function to shuffle elements in an array. 
+// function shuffle () {
+//   alpha.sort(() => Math.random() - 0.5);
+// }
+
+// shuffle(alpha);
+
+// console.log(alpha);
+
 
 // Assignment Code Variable that selects button div
 var generateBtn = document.querySelector("#generate");
@@ -59,7 +75,7 @@ function generatePassword() {
       passLength.push(i);
     }}
     // This ends the Password Length segment. Correct Array Length stored in passLength
-
+  
 // This begins the segment to choose characters
 var charStart = confirm(charTrigger); 
   if (charStart === true) {
@@ -67,43 +83,44 @@ var charStart = confirm(charTrigger);
   } else {
     alert(errorTrigger);}  
   
+    // Uppercase Confirm section
     if (upperConfirm === true) {
+      var upperAdd = passLength.concat(upperAlpha);
+      console.log(upperAdd);
       // Replace with code that includes uppercase letters
-      alert(passLength); 
+      var lowerConfirm = confirm(lowerTrigger); 
     } else {
       var lowerConfirm = confirm(lowerTrigger);}
     
+      console.log(passLength);
     if (lowerConfirm === true) {
       // Replace with code to include lowercase letters
       alert(passLength);
     } else {
       var numConfirm = confirm(numTrigger);}
 
-      if (numConfirm === true) {
-        // Replace with code to include numbers
-        alert(passLength);
-      } else {
-        var specConfirm = confirm(specTrigger);
-      }
+//       if (numConfirm === true) {
+//         // Replace with code to include numbers
+//         alert(passLength);
+//       } else {
+//         var specConfirm = confirm(specTrigger);
+//       }
 
-      if (specConfirm === true) {
-        // Replace with code to include special characters
-        alert(passLength);
-      } else {
-        var finConfirm = confirm(finTrigger);
-      }
+//       if (specConfirm === true) {
+//         // Replace with code to include special characters
+//         alert(passLength);
+//       } else {
+//         var finConfirm = confirm(finTrigger);
+//       }
 
-      if (finConfirm === true) {
-        // Replace to display final password
-        alert(passLength);
-      } else {
-        alert(passLength);
-      }
+//       if (finConfirm === true) {
+//         // Replace to display final password
+//         alert(passLength);
+//       } else {
+//         alert(passLength);
+//       }
 
 }
-
-  
-
 
 
 
