@@ -90,38 +90,98 @@ var charStart = confirm(charTrigger);
       var upperAdd = passLength.concat(upperAlpha);
       console.log(upperAdd);
       var lowerConfirm = confirm(lowerTrigger); 
-    } else {
-      var lowerConfirm = confirm(lowerTrigger);}
+    } else if (upperConfirm !== true) {
+      var lowerConfirm = confirm(lowerTrigger);
+      console.log(passLength);}
     
-
-    if (lowerConfirm === true) {
+// Lowercase Confirm Section
+    if (lowerConfirm === true && upperConfirm !== true) {
       var lowerAdd = passLength.concat(alpha);
       console.log(lowerAdd);
-      var numConfirm = confirm(numTrigger);
-    } else {
-      var numConfirm = confirm(numTrigger);}
+    } else if (lowerConfirm === true && upperConfirm === true) {
+      var lowerAdd = passLength.concat(alpha);
+      console.log(lowerAdd);
+      var charCombine = lowerAdd.concat(upperAlpha);
+      console.log(charCombine);    
+    } else if (lowerConfirm !== true && upperConfirm !== true) {}  
+    
+    var numConfirm = confirm(numTrigger);
+    
 
-      if (numConfirm === true) {
+    // Numbers confirm Section 
+      if (numConfirm === true && lowerConfirm !== true && upperConfirm !== true) {
         var numAdd = passLength.concat(passRange);
         console.log(numAdd);
-      } else {
+      } else if (numConfirm === true && lowerConfirm === true && upperConfirm !== true) {
+        var numAdd = passLength.concat(passRange);
+        var numCombine = numAdd.concat(alpha);
+        console.log(numCombine);
+      } else if (numConfirm === true && lowerConfirm !== true && upperConfirm === true) {
+        var numAdd = passLength.concat(passRange);
+        var numCombine = numAdd.concat(upperAlpha);
+        console.log(numCombine);
+      } else if (numConfirm === true && lowerConfirm === true && upperConfirm === true) {
+        var numAdd = passLength.concat(passRange);
+        var charAdd = numAdd.concat(upperAlpha);
+        var numCombine = charAdd.concat(alpha);
+        console.log(numCombine);
         var specConfirm = confirm(specTrigger);
-      }
+      } else if (numConfirm !== true && lowerConfirm !== true && upperConfirm !== true) {}
+      
+      var specConfirm = confirm(specTrigger)
 
-      if (specConfirm === true) {
+// Special Characters confirm section
+      if (specConfirm === true && numConfirm !== true && lowerConfirm !== true && upperConfirm !== true) {
         var specAdd = passLength.concat(specialAlpha);
         console.log(specAdd);
-        var finConfirm = confirm(finTrigger);
-      } else {
-        var finConfirm = confirm(finTrigger);
-      }
+        // all the two are true Scenarios
+      } else if (specConfirm === true && numConfirm === true && lowerConfirm !== true && upperConfirm !== true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var specCombine = specAdd.concat(passRange);
+        console.log(specCombine);
+      } else if (specConfirm === true && numConfirm !== true && lowerConfirm === true && upperConfirm !== true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var specCombine = specAdd.concat(alpha); 
+        console.log(specCombine);
+      } else if (specConfirm === true && numConfirm !== true && lowerConfirm !== true && upperConfirm === true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var specCombine = specAdd.concat(upperAlpha); 
+        console.log(specCombine);
+        // Three are true Scenarios
+      } else if (specConfirm === true && numConfirm === true && lowerConfirm === true && upperConfirm !== true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var numCombine = specAdd.concat(passRange);
+        var specCombine = numCombine.concat(alpha); 
+        console.log(specCombine);
+      } else if (specConfirm === true && numConfirm === true && lowerConfirm !== true && upperConfirm === true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var numCombine = specAdd.concat(passRange);
+        var specCombine = numCombine.concat(upperAlpha); 
+        console.log(specCombine);
+      } else if (specConfirm === true && numConfirm !== true && lowerConfirm === true && upperConfirm === true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var charCombine = specAdd.concat(alpha);
+        var specCombine = numCombine.concat(upperAlpha); 
+        console.log(specCombine);
+      } else if (specConfirm === true && numConfirm === true && lowerConfirm === true && upperConfirm === true) {
+        var specAdd = passLength.concat(specialAlpha);
+        var numCombine = specAdd.concat(passRange);
+        var low
+        var specCombine = numCombine.concat(alpha); 
+        console.log(specCombine);}
 
-//       if (finConfirm === true) {
-//         // Replace to display final password
-//         alert(passLength);
-//       } else {
-//         alert(passLength);
-//       }
+    
+      var finConfirm = confirm(finTrigger);
+
+      
+      
+//This is where we formulate our final password 
+      // if (finConfirm === true) {
+      //   // Replace to display final password
+      //   alert(passLength);
+      // } else {
+      //   alert(passLength);
+      // }
 
 }
 
