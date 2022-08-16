@@ -30,12 +30,10 @@ var passMax = passRange[117];
 
 // Working function to shuffle elements in an array. 
 // function shuffle () {
-//   alpha.sort(() => Math.random() - 0.5);
+//   passRange.sort(() => Math.random() - 0.5);
 // }
 
-// shuffle(alpha);
-
-// console.log(alpha);
+// console.log(passRange);
 
 
 // Assignment Code Variable that selects button div
@@ -87,7 +85,8 @@ var charStart = confirm(charTrigger);
   
     // Uppercase Confirm section
     if (upperConfirm === true) {
-      var upperAdd = passLength.concat(upperAlpha);
+      // var upperAdd = passLength.concat(upperAlpha);
+        var upperAdd = [...upperAlpha,...upperAlpha,...upperAlpha,...upperAlpha,...upperAlpha];     
       console.log(upperAdd);
       var lowerConfirm = confirm(lowerTrigger); 
     } else if (upperConfirm !== true) {
@@ -96,14 +95,11 @@ var charStart = confirm(charTrigger);
     
 // Lowercase Confirm Section
     if (lowerConfirm === true && upperConfirm !== true) {
-      var lowerAdd = passLength.concat(alpha);
+      var lowerAdd = [...alpha,...alpha,...alpha,...alpha,...alpha];
       console.log(lowerAdd);
     } else if (lowerConfirm === true && upperConfirm === true) {
-      var lowerAdd = passLength.concat(alpha);
-      console.log(lowerAdd);
-      var charCombine = lowerAdd.concat(upperAlpha);
-      console.log(charCombine);    
-    } else if (lowerConfirm !== true && upperConfirm !== true) {}  
+      var lowerAdd = [...alpha,...upperAlpha,...alpha,...upperAlpha,...alpha];
+      console.log(lowerAdd);}    
     
     var numConfirm = confirm(numTrigger);
     
@@ -113,26 +109,20 @@ var charStart = confirm(charTrigger);
         var numAdd = passLength.concat(passRange);
         console.log(numAdd);
       } else if (numConfirm === true && lowerConfirm === true && upperConfirm !== true) {
-        var numAdd = passLength.concat(passRange);
-        var numCombine = numAdd.concat(alpha);
+        var numCombine = [...passRange,...alpha,...alpha,...alpha];
         console.log(numCombine);
       } else if (numConfirm === true && lowerConfirm !== true && upperConfirm === true) {
-        var numAdd = passLength.concat(passRange);
-        var numCombine = numAdd.concat(upperAlpha);
+        var numCombine = [...passRange,...upperAlpha,...upperAlpha,...upperAlpha];
         console.log(numCombine);
       } else if (numConfirm === true && lowerConfirm === true && upperConfirm === true) {
-        var numAdd = passLength.concat(passRange);
-        var charAdd = numAdd.concat(upperAlpha);
-        var numCombine = charAdd.concat(alpha);
-        console.log(numCombine);
-        var specConfirm = confirm(specTrigger);
-      } else if (numConfirm !== true && lowerConfirm !== true && upperConfirm !== true) {}
+        var numCombine = [...passRange,...alpha,...upperAlpha,...alpha,...upperAlpha];
+        console.log(numCombine);} 
       
-      var specConfirm = confirm(specTrigger)
+        var specConfirm = confirm(specTrigger)
 
 // Special Characters confirm section
       if (specConfirm === true && numConfirm !== true && lowerConfirm !== true && upperConfirm !== true) {
-        var specAdd = passLength.concat(specialAlpha);
+        var specAdd = [...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha,...specialAlpha];
         console.log(specAdd);
         // all the two are true Scenarios
       } else if (specConfirm === true && numConfirm === true && lowerConfirm !== true && upperConfirm !== true) {
@@ -166,23 +156,60 @@ var charStart = confirm(charTrigger);
       } else if (specConfirm === true && numConfirm === true && lowerConfirm === true && upperConfirm === true) {
         var specAdd = passLength.concat(specialAlpha);
         var numCombine = specAdd.concat(passRange);
-        var low
-        var specCombine = numCombine.concat(alpha); 
+        var lowerCombine = numCombine.concat(alpha)
+        var specCombine = lowerCombine.concat(upperAlpha); 
         console.log(specCombine);}
-
-    
-      var finConfirm = confirm(finTrigger);
-
-      
-      
-//This is where we formulate our final password 
-      // if (finConfirm === true) {
-      //   // Replace to display final password
-      //   alert(passLength);
-      // } else {
-      //   alert(passLength);
-      // }
-
+        
+        confirm(finTrigger);
+        if (upperConfirm === true && numConfirm !== true && lowerConfirm !== true && specConfirm !== true) {
+          var randomize = upperAdd
+          randomize.sort(() => Math.random() - 0.5)
+          console.log(randomize) 
+          password = randomize.splice(0,passLength.length);
+        alert(password);     
+        } else if (upperConfirm !== true && numConfirm !== true && lowerConfirm === true && specConfirm !== true) {
+          var randomize = lowerAdd
+          randomize.sort(() => Math.random() - 0.5)
+          console.log(randomize) 
+          password = randomize.splice(0,passLength.length);
+        alert(password);     
+        } else if (upperConfirm !== true && numConfirm === true && lowerConfirm !== true && specConfirm !== true) {
+          var randomize = numAdd
+          randomize.sort(() => Math.random() - 0.5)
+          console.log(randomize) 
+          password = randomize.splice(0,passLength.length);
+        alert(password);
+        } else if (upperConfirm !== true && numConfirm !== true && lowerConfirm !== true && specConfirm === true) {
+    var randomize = specAdd
+    randomize.sort(() => Math.random() - 0.5)
+    console.log(randomize) 
+    password = randomize.splice(0,passLength.length);
+  alert(password);
+        } else if (upperConfirm === true && numConfirm !== true && lowerConfirm === true && specConfirm !== true) {
+          var randomize = lowerAdd
+          randomize.sort(() => Math.random() - 0.5)
+          console.log(randomize) 
+          password = randomize.splice(0,passLength.length);
+        alert(password);
+      } else if (upperConfirm !== true && numConfirm === true && lowerConfirm === true && specConfirm !== true) {
+        var randomize = numCombine
+        randomize.sort(() => Math.random() - 0.5)
+        console.log(randomize) 
+        password = randomize.splice(0,passLength.length);
+      alert(password);
+      } else if (upperConfirm === true && numConfirm === true && lowerConfirm !== true && specConfirm !== true) {
+        var randomize = numCombine
+        randomize.sort(() => Math.random() - 0.5)
+        console.log(randomize) 
+        password = randomize.splice(0,passLength.length);
+      alert(password);
+      } else if (upperConfirm === true && numConfirm === true && lowerConfirm === true && specConfirm !== true) {
+        var randomize = numCombine
+        randomize.sort(() => Math.random() - 0.5)
+        console.log(randomize) 
+        password = randomize.splice(0,passLength.length);
+      alert(password);
+    }
 }
 
 
