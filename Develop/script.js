@@ -21,21 +21,6 @@ for (var i = 8; i < 126; i++) {
 var passMin = passRange[0];
 var passMax = passRange[117];
 
-// // Successfully combined two arrays
-// console.log(alpha);
-// console.log(upperAlpha);
-
-// var newArray = alpha.concat(upperAlpha);
-// console.log(newArray);
-
-// Working function to shuffle elements in an array. 
-// function shuffle () {
-//   passRange.sort(() => Math.random() - 0.5);
-// }
-
-// console.log(passRange);
-
-
 // Assignment Code Variable that selects button div
 var generateBtn = document.querySelector("#generate");
 
